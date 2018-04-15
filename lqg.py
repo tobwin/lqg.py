@@ -76,6 +76,9 @@ class LQG:
 
         a = np.shape(self.var['A'][0])
 
+        if self.var['X0'] is None:
+            self.var['X0'] = [np.matrix(np.zeros(np.shape((a, a))))]
+
         if not self.var['C'] is None:
             c = np.shape(self.var['C'][0])
             self.kalman()
